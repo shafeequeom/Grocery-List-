@@ -5,33 +5,11 @@
     <title>Angular Playlist</title>
     <link href="content\css\style.css" rel="stylesheet" type="text/css" />
     <script src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular-route.min.js"></script>
     <script src="app\lib\app.js"></script>
   </head>
   <body>
     <header ng-include="'header.html'"></header>
-    <div class="content">
-
-    <div ng-controller="AppController">
-      <button ng-click="order='name'">Order By Name</button>
-      <button ng-click="order='price'">Order By Rate</button>
-      <input type="text" placeholder="Search for Item" ng-model="search" />
-      <ul>
-        <li ng-repeat="item in items  | orderBy: order | filter: search" ng-show="item.available">
-          <h3>{{item.name}} - {{item.price | currency: '₹'}}</h3>
-          <div class="remove" ng-click="removeItem(item)">X</div>
-          <span class="item" style="background:{{item.color}}"> {{item.type}}</span>
-        </li>
-      </ul>
-
-      <form ng-submit="addItem()">
-        <input type="text" placeholder="Name of the item" ng-model="newitem.name">
-        <input type="text" placeholder="Price of the Item" ng-model="newitem.rate">
-        <input type="text" placeholder="Indicator Color" ng-model="newitem.color">
-        <input type="text" placeholder="Type of Item" ng-model="newitem.type">
-        <input type="submit" name="submit" value="Add New Item">
-      </form>
-
-    </div>
-  </div>
+    <main ng-view></main>
   </body>
 </html>
