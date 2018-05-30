@@ -3,6 +3,11 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('AppController', ['$scope', function($scope) {
 
+  $scope.removeItem = function (item) {
+    var removedItem = $scope.items.indexOf(item);
+    $scope.items.splice(removedItem, 1);
+  }
+
   $scope.items = [
     {
       name: "Tomato",
