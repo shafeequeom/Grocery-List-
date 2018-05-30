@@ -22,6 +22,15 @@
           <span class="item" style="background:{{item.color}}"> {{item.type}}</span>
         </li>
       </ul>
+
+      <form ng-submit="addItem()">
+        <input type="text" placeholder="Name of the item" ng-model="newitem.name">
+        <input type="text" placeholder="Price of the Item" ng-model="newitem.rate">
+        <input type="text" placeholder="Indicator Color" ng-model="newitem.color">
+        <input type="text" placeholder="Type of Item" ng-model="newitem.type">
+        <input type="submit" name="submit" value="Add New Item">
+      </form>
+
     </div>
   </div>
   </body>

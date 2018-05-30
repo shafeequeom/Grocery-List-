@@ -6,7 +6,20 @@ myApp.controller('AppController', ['$scope', function($scope) {
   $scope.removeItem = function (item) {
     var removedItem = $scope.items.indexOf(item);
     $scope.items.splice(removedItem, 1);
-  }
+  };
+
+  $scope.addItem = function () {
+    $scope.items.push(
+      {
+        name: $scope.newitem.name,
+        price: $scope.newitem.rate,
+        type: $scope.newitem.type,
+        color:$scope.newitem.color,
+        available: true
+      }
+    );
+  };
+
 
   $scope.items = [
     {
