@@ -8,15 +8,21 @@
     <script src="app\lib\app.js"></script>
   </head>
   <body>
-    <ng-include src="'header.html'"></ng-include>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+
     <div ng-controller="AppController">
-      <input type="text" ng-model="search" />
+      <button ng-click="order='name'">Order By Name</button>
+      <button ng-click="order='price'">Order By Rate</button>
+      <input type="text" placeholder="Search for Item" ng-model="search" />
       <ul>
-        <li ng-repeat="item in items  | orderBy: 'name' | filter: search">
-          {{item.name}} - {{item.price | currency: '₹'}}
+        <li ng-repeat="item in items  | orderBy: order | filter: search" ng-show="item.available">
+          <h3>{{item.name}} - {{item.price | currency: '₹'}}</h3>
+          <div class="remove" ng-click="removeItem()">X</div>
+          <span class="belt" style="background:{{item.color}}"> {{item.type}}</span>
         </li>
       </ul>
     </div>
-
+  </div>
   </body>
 </html>

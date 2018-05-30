@@ -7,22 +7,30 @@ myApp.controller('AppController', ['$scope', function($scope) {
     {
       name: "Tomato",
       price: 50,
-      type: "Vegitable"
+      type: "Vegitable",
+      color:"red",
+      available: true
     },
     {
       name: "Apple",
       price: 160,
-      type: "Fruits"
+      type: "Fruits",
+      color:"red",
+      available: true
     },
     {
       name: "Onion",
       price: 30,
-      type: "Vegitable"
+      type: "Vegitable",
+      color:"violet",
+      available: true
     },
     {
       name: "Pototo",
       price: 48,
-      type: "Vegitable"
+      type: "Vegitable",
+      color:"Goldenrod",
+      available: true
     }
 
   ];
